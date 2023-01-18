@@ -6,13 +6,12 @@ using System.Web;
 
 namespace SchoolAutomationSystem.Models
 {
-    public class Role:AbstractGeneric
+    public class Faculty:AbstractGeneric
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Admin> Admin { get; set;}
-        public List<Student> Student { get; set; }
-        public List<Teacher> Teacher { get; set; }
-        public List<StudentAffair> StudentAffair { get; set; }
+        public double Pay { get; set; }//Fakülte okuma bedeli.
+        public List<Lesson> Lesson { get; set; }//Fakülteye ait ders listesi.
+        public List<Department> Department { get; set; }
     }
 }

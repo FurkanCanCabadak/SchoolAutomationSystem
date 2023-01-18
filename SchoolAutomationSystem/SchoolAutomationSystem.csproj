@@ -134,9 +134,13 @@
     </Compile>
     <Compile Include="Models\Abstract\AbstractGeneric.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\Lesson.cs" />
     <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\SelectionLesson.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentAffair.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IGenericRepository.cs" />
