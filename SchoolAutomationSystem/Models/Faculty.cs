@@ -10,8 +10,8 @@ namespace SchoolAutomationSystem.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public double Pay { get; set; }//Fakülte okuma bedeli.
-        public List<Lesson> Lesson { get; set; }//Fakülteye ait ders listesi.
-        public List<Department> Department { get; set; }
+        public DateTime SelectionStart { get; set; }
+        public DateTime SelectionEnd { get; set; }
+        public List<Department> Department { get; set; }//Fakülteye ait bölümler.
     }
 }

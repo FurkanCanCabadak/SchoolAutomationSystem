@@ -11,6 +11,8 @@ namespace SchoolAutomationSystem.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
         public string Title { get; set; }
         public int TeacherNumber { get; set; }//Bu numara ile giriş olacak.
         public string Password { get; set; }

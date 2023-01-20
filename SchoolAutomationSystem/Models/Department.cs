@@ -11,6 +11,7 @@ namespace SchoolAutomationSystem.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int MinGraduateCredit { get; set; }//Mezun olmak için gerekli minimum ders kredisi.
+        public double Pay { get; set; }//Bölümün okuma bedeli.
         public List<Student> Student { get; set; }
         public int FacultyId { get; set; }
         public Faculty Faculty { get; set; }

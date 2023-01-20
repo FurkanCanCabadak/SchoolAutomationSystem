@@ -17,13 +17,15 @@ namespace SchoolAutomationSystem.Models
         public string Password { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
+        public int AdvisorId { get; set; }//Danışman öğretmen.
+        public int Term { get; set; }//Öğrencinin kaçıncı dönemde olduğu.
         public double Scholarship { get; set; } //Burs oranı.
         public int TotalCredit { get; set; } = 0;//Derslerden topladığı kredi miktarı.
         public bool IsPayment { get; set; }//Harcı yatırıp yatırmadığı.
         public bool IsGraduate { get; set; }//Mezun olup olmadığı.
         public int RoleId { get; set; }
         public Role Role { get; set; }
-        public int DepartmentId { get; set; }
+        public int DepartmenttId { get; set; }
         public Department Department { get; set; }
         public List<SelectionLesson> SelectionLesson { get; set; }//Seçilen derslerin listesi
     }

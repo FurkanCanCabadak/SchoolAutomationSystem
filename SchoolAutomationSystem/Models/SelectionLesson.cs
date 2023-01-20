@@ -12,6 +12,7 @@ namespace SchoolAutomationSystem.Models
         public double VisaNote { get; set; }
         public double FinalNote { get; set; }
         public int StudentId { get; set; }//Dersi seçen öğrenci.
+        public DateTime SelectionTime { get; set; }//Dersin seçildiği tarih.
         public Student Student { get; set; }
         public int LessonId { get; set; }//Seçilen ders.
         public Lesson Lesson { get; set; }
