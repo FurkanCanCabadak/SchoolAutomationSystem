@@ -59,6 +59,8 @@ namespace SchoolAutomationSystem.Repository
 
                 Role role = db.Role.Find(entity.Id);
                 role.Name = entity.Name;
+                role.IsStatus = entity.IsStatus;
+                db.SaveChanges();
                 result = true;
             }
             catch { }

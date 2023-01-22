@@ -15,6 +15,7 @@ namespace SchoolAutomationSystem.Controllers
         {
             return View();
         }
+        
         public ActionResult Login()
         {
 

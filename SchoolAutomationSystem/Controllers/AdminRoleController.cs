@@ -8,7 +8,6 @@ using System.Web.Mvc;
 
 namespace SchoolAutomationSystem.Controllers
 {
-
     public class AdminRoleController : Controller
     {
         // GET: AdminRole

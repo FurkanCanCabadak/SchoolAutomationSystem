@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminRoleController.cs" />
+    <Compile Include="Controllers\AdminTeacherController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataAccessLayer\DataAccess.cs" />
     <Compile Include="Global.asax.cs">
@@ -152,6 +153,7 @@
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\EntityModel\SecurityModel.cs" />
+    <Compile Include="Models\EntityModel\TeacherRoleLesson.cs" />
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\Lesson.cs" />
     <Compile Include="Models\Role.cs" />
@@ -1632,6 +1634,8 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\AdminRole\Index.cshtml" />
+    <Content Include="Views\AdminRole\Edit.cshtml" />
+    <Content Include="Views\AdminTeacher\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202301212042029_createDb.resx">
