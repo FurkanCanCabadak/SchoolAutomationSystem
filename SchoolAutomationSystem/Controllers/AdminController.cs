@@ -11,7 +11,6 @@ namespace SchoolAutomationSystem.Controllers
     {
         // GET: Admin
         SecurityModel security = new SecurityModel();
-        // GET: Role
         public ActionResult Index()
         {
             return View();

@@ -129,7 +129,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\AdminPartialController.cs" />
     <Compile Include="Controllers\AdminRoleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataAccessLayer\DataAccess.cs" />
@@ -171,7 +170,6 @@
     <Compile Include="Repository\StudentAffairRepository.cs" />
     <Compile Include="Repository\StudentRepository.cs" />
     <Compile Include="Repository\TeacherRepository.cs" />
-    <Compile Include="Views\AdminPartial\Header.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Admin\assets\css\app.min.css" />
@@ -1438,9 +1436,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1634,11 +1629,9 @@
     <Content Include="Content\Home\vendor\unicons-2.0.1\fonts\unicons-9.woff2" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\AdminRole\Index.cshtml" />
-    <Content Include="Views\AdminRole\Edit.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
-    <Content Include="Views\AdminPartial\AdminAccount.cshtml" />
+    <Content Include="Views\AdminRole\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202301212042029_createDb.resx">

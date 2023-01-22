@@ -17,6 +17,7 @@ namespace SchoolAutomationSystem.Controllers
         {
             return View(roleRepository.List());
         }
+
         public ActionResult Delete(int id)
         {
             TempData["Message"] = roleRepository.Delete(id) ?
@@ -56,5 +57,6 @@ namespace SchoolAutomationSystem.Controllers
 
             return View(roleRepository.Detail(role.Id));
         }
+
     }
 }
