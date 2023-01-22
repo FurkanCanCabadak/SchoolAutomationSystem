@@ -20,7 +20,7 @@ namespace SchoolAutomationSystem.Repository
                 admin.Surname = entity.Surname;
                 admin.Email = entity.Email;
                 admin.Phone = entity.Phone;
-                admin.AdminNumber = entity.AdminNumber;
+                admin.UserName = entity.UserName;
                 admin.Password = entity.Password;
                 admin.RoleId = entity.RoleId;
                 admin.IsStatus = entity.IsStatus;
@@ -68,7 +68,7 @@ namespace SchoolAutomationSystem.Repository
                 admin.Surname = entity.Surname;
                 admin.Email = entity.Email;
                 admin.Phone = entity.Phone;
-                admin.AdminNumber = entity.AdminNumber;
+                admin.UserName = entity.UserName;
                 admin.Password = entity.Password;
                 admin.RoleId = entity.RoleId;
                 admin.IsStatus = entity.IsStatus;
@@ -82,6 +82,12 @@ namespace SchoolAutomationSystem.Repository
         public List<Admin> List()
         {
             return db.Admin.Where(x => x.IsDelete == false).ToList();
+        }
+        public Admin AdminAccount(string userName)
+        {
+            var admin = db.Admin.FirstOrDefault(x => x.UserName == userName);
+
+            return admin;
         }
     }
 }
