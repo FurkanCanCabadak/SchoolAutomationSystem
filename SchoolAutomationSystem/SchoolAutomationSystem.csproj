@@ -1629,6 +1629,9 @@
     <Content Include="Views\AdminRole\Edit.cshtml" />
     <Content Include="Views\AdminTeacher\Index.cshtml" />
     <Content Include="Views\AdminTeacher\Edit.cshtml" />
+    <Content Include="Views\Shared\_StudentAffairLayout.cshtml" />
+    <Content Include="Views\Shared\_StudentsLayout.cshtml" />
+    <Content Include="Views\Shared\_TeacherLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202301271008545_createDb.resx">
