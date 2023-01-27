@@ -77,7 +77,7 @@ namespace SchoolAutomationSystem.Repository
                 teacher.Phone = entity.Phone;
                 teacher.Title = entity.Title;
                 teacher.LessonId = entity.LessonId;
-                teacher.RoleId = entity.RoleId;
+                teacher.IsStatus= entity.IsStatus;
                 db.SaveChanges();
                 result = true;
             }

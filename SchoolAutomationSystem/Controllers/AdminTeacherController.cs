@@ -21,8 +21,8 @@ namespace SchoolAutomationSystem.Controllers
         {
             var model = new TeacherRoleLesson();
             model.TeacherList = teacherRepository.List();
-            model.LessonList= lessonRepository.List();
-            model.RoleList= roleRepository.List();
+            model.LessonList = lessonRepository.List();
+            model.RoleList = roleRepository.List();
             return View(model);
         }
         public ActionResult Delete(int id)
@@ -36,7 +36,7 @@ namespace SchoolAutomationSystem.Controllers
         [HttpPost]
         public ActionResult Add(Teacher teacher)
         {
-
+            
             TempData["Message"] = teacherRepository.Add(teacher) ?
                                     "Teacher Added Successful" :
                                     "Teacher Insert Failed";
@@ -67,7 +67,7 @@ namespace SchoolAutomationSystem.Controllers
         [Route("~/AdminTeacher/Edit/{id:int}")]
         public ActionResult Edit(Teacher teacher)
         {
-            ViewBag.Message = teacherRepository.Edit(teacher) ?
+            TempData["Message"] = teacherRepository.Edit(teacher) ?
                                    "Teacher Edit Successful" :
                                    "Teacher Edit Failed";
 

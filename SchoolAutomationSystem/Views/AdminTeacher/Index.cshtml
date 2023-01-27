@@ -164,14 +164,72 @@
                         <h5 class="modal-title" id="exampleModalLabel"></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
                     </div>
-                    <form method="post" action="~/AdminRole/Add">
+                    <form method="post" action="~/AdminTeacher/Add">
                         <div class="modal-body">
 
 
 
-                            <div class="mb-3">
-                                <label for="customername-field" class="form-label">Role Name</label>
-                                <input type="text" id="Name" name="Name" class="form-control" placeholder="Enter Role Name" required />
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="basiInput" class="form-label">Title</label>
+                                    <input type="text" class="form-control" name="Title" id="Title" >
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="basiInput" class="form-label">Name</label>
+                                    <input type="text" class="form-control" name="Name" id="Name" >
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="basiInput" class="form-label">Surname</label>
+                                    <input type="text" class="form-control" name="Surname" id="Surname" >
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="basiInput" class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="Email" id="Email" >
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="basiInput" class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" name="Phone" id="Phone" >
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="basiInput" class="form-label">User Name</label>
+                                    <input type="text" class="form-control" name="UserName" id="UserName" >
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="basiInput" class="form-label">Password</label>
+                                    <input type="text" class="form-control" name="Password" id="Password" >
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div>
+                                    <label for="basiInput" class="form-label">Role</label>
+                                    <input type="hidden" name="RoleId" value="3" />
+                                    <input type="text" class="form-control" name="Role" id="Role" value="Teacher" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="basiInput" class="form-label">Lesson</label>
+                                    <select name="LessonId" id="LessonId" class="form-control">
+                                            @foreach (var lesson in Model.LessonList.ToList())
+                                            {
+                                                <option value="@lesson.Id">
+                                                    @lesson.Name
+                                                </option>
+                                            }
+                                    </select>
+                                </div>
                             </div>
 
 
