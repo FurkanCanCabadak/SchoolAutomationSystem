@@ -19,7 +19,7 @@ namespace SchoolAutomationSystem.Repository
                 var teacher = new Teacher();
                 teacher.Name = entity.Name;
                 teacher.Surname = entity.Surname;
-                teacher.TeacherNumber = entity.TeacherNumber;
+                teacher.UserName = entity.UserName;
                 teacher.Password = entity.Password;
                 teacher.Email = entity.Email;
                 teacher.Phone = entity.Phone;
@@ -71,7 +71,7 @@ namespace SchoolAutomationSystem.Repository
                 Teacher teacher = db.Teacher.Find(entity.Id);
                 teacher.Name = entity.Name;
                 teacher.Surname = entity.Surname;
-                teacher.TeacherNumber = entity.TeacherNumber;
+                teacher.UserName = entity.UserName;
                 teacher.Password = entity.Password;
                 teacher.Email = entity.Email;
                 teacher.Phone = entity.Phone;

@@ -18,7 +18,7 @@ namespace SchoolAutomationSystem.Repository
                 var student = new Student();
                 student.Name = entity.Name;
                 student.Surname = entity.Surname;
-                student.StudentNumber = entity.StudentNumber;
+                student.UserName = entity.UserName;
                 student.TCNumber = entity.TCNumber;
                 student.Password = entity.Password;
                 student.Email = entity.Email;
@@ -77,7 +77,7 @@ namespace SchoolAutomationSystem.Repository
                 Student student = db.Student.Find(entity.Id);
                 student.Name = entity.Name;
                 student.Surname = entity.Surname;
-                student.StudentNumber = entity.StudentNumber;
+                student.UserName = entity.UserName;
                 student.TCNumber = entity.TCNumber;
                 student.Password = entity.Password;
                 student.Email = entity.Email;

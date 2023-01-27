@@ -7,13 +7,13 @@ namespace SchoolAutomationSystem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class adminusername : IMigrationMetadata
+    public sealed partial class createDb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(adminusername));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(createDb));
         
         string IMigrationMetadata.Id
         {
-            get { return "202301212312191_adminusername"; }
+            get { return "202301271008545_createDb"; }
         }
         
         string IMigrationMetadata.Source

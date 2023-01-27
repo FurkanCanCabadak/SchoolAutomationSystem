@@ -19,11 +19,11 @@ namespace SchoolAutomationSystem.Controllers
         // GET: AdminTeacher
         public ActionResult Index()
         {
-            var modal = new TeacherRoleLesson();
-            modal.TeacherList = teacherRepository.List();
-            modal.RoleList = roleRepository.List();
-            modal.LessonList= lessonRepository.List();
-            return View(modal);
+            var model = new TeacherRoleLesson();
+            model.TeacherList = teacherRepository.List();
+            model.LessonList= lessonRepository.List();
+            model.RoleList= roleRepository.List();
+            return View(model);
         }
         public ActionResult Delete(int id)
         {
@@ -44,25 +44,34 @@ namespace SchoolAutomationSystem.Controllers
         }
 
         [HttpGet]
+        [Route("~/AdminTeacher/Edit/{id:int}")]
         public ActionResult Edit(int id)
         {
             var teacher = teacherRepository.Detail(id);
             if (teacher != null)
             {
-                return View(teacher);
+                TeacherRoleLesson model = new TeacherRoleLesson();
+                model.TeacherList = teacherRepository.List();
+                model.LessonList = lessonRepository.List();
+                model.RoleList = roleRepository.List();
+                model.SingleTeacher= teacher;
+                model.SingleLesson = lessonRepository.Detail(teacher.LessonId);
+                model.SingleRole = roleRepository.Detail(teacher.RoleId);
+                return View(model);
             }
-
+            TempData["Message"] = "Not Found Teacher";
             return RedirectToAction("Index");
 
         }
         [HttpPost]
+        [Route("~/AdminTeacher/Edit/{id:int}")]
         public ActionResult Edit(Teacher teacher)
         {
             ViewBag.Message = teacherRepository.Edit(teacher) ?
-                                   "Role Edit Successful" :
-                                   "Role Edit Failed";
+                                   "Teacher Edit Successful" :
+                                   "Teacher Edit Failed";
 
-            return View(teacherRepository.Detail(teacher.Id));
+            return Redirect(Request.UrlReferrer.ToString());
         }
 
     }

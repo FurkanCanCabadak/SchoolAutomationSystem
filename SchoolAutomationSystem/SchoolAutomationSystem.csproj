@@ -136,17 +136,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202301212042029_createDb.cs" />
-    <Compile Include="Migrations\202301212042029_createDb.designer.cs">
-      <DependentUpon>202301212042029_createDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202301212234546_updateAdmin.cs" />
-    <Compile Include="Migrations\202301212234546_updateAdmin.designer.cs">
-      <DependentUpon>202301212234546_updateAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202301212312191_adminusername.cs" />
-    <Compile Include="Migrations\202301212312191_adminusername.designer.cs">
-      <DependentUpon>202301212312191_adminusername.cs</DependentUpon>
+    <Compile Include="Migrations\202301271008545_createDb.cs" />
+    <Compile Include="Migrations\202301271008545_createDb.designer.cs">
+      <DependentUpon>202301271008545_createDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\AbstractGeneric.cs" />
@@ -1636,16 +1628,11 @@
     <Content Include="Views\AdminRole\Index.cshtml" />
     <Content Include="Views\AdminRole\Edit.cshtml" />
     <Content Include="Views\AdminTeacher\Index.cshtml" />
+    <Content Include="Views\AdminTeacher\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202301212042029_createDb.resx">
-      <DependentUpon>202301212042029_createDb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202301212234546_updateAdmin.resx">
-      <DependentUpon>202301212234546_updateAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202301212312191_adminusername.resx">
-      <DependentUpon>202301212312191_adminusername.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202301271008545_createDb.resx">
+      <DependentUpon>202301271008545_createDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
