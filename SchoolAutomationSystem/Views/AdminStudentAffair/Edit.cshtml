@@ -1,0 +1,102 @@
+﻿@model SchoolAutomationSystem.Models.StudentAffair
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Edit Student Affair</h4>
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="~/AdminStudentAffair">StudentAffair List</a></li>
+                            <li class="breadcrumb-item active">Edit Student Affair</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header align-items-center d-flex">
+                        <h4 class="card-title mb-0 flex-grow-1">Edit Student Affair </h4>
+                        <b class="text-warning">@TempData["Message"]</b>
+                    </div><!-- end card header -->
+                    <div class="card-body">
+                        <div class="live-preview">
+                            <form method="post">
+
+                                <div class="row gy-4">
+                                    
+                                    <div class="col-md-12">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Name</label>
+                                            <input type="text" class="form-control" name="Name" id="Name" value="@Model.Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Surname</label>
+                                            <input type="text" class="form-control" name="Surname" id="Surname" value="@Model.Surname">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Email</label>
+                                            <input type="email" class="form-control" name="Email" id="Email" value="@Model.Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Phone</label>
+                                            <input type="tel" class="form-control" name="Phone" id="Phone" value="@Model.Phone">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div>
+                                            <label for="basiInput" class="form-label">User Name</label>
+                                            <input type="text" class="form-control" name="UserName" id="UserName" value="@Model.UserName">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Password</label>
+                                            <input type="text" class="form-control" name="Password" id="Password" value="@Model.Password">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div>
+                                            <label for="basiInput" class="form-label">Status</label>
+                                            <div class="form-check form-switch form-switch-secondary">
+                                                <input class="form-check-input" type="checkbox" role="switch" name="IsStatus" id="IsStatus" data-val="true" value="true" checked="@Model.IsStatus">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button class="btn btn-success float-end" type="submit">Edit Student Affair</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!--end row-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+
+
+    </div> <!-- container-fluid -->
+</div><!-- End Page-content -->

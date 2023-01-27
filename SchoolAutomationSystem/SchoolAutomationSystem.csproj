@@ -129,7 +129,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminFacultyController.cs" />
     <Compile Include="Controllers\AdminRoleController.cs" />
+    <Compile Include="Controllers\AdminStudentAffairController.cs" />
     <Compile Include="Controllers\AdminTeacherController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataAccessLayer\DataAccess.cs" />
@@ -139,6 +141,10 @@
     <Compile Include="Migrations\202301271008545_createDb.cs" />
     <Compile Include="Migrations\202301271008545_createDb.designer.cs">
       <DependentUpon>202301271008545_createDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301271517220_passwordUpdate.cs" />
+    <Compile Include="Migrations\202301271517220_passwordUpdate.designer.cs">
+      <DependentUpon>202301271517220_passwordUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\AbstractGeneric.cs" />
@@ -1433,6 +1439,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AdminFaculty\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1632,10 +1639,15 @@
     <Content Include="Views\Shared\_StudentAffairLayout.cshtml" />
     <Content Include="Views\Shared\_StudentsLayout.cshtml" />
     <Content Include="Views\Shared\_TeacherLayout.cshtml" />
+    <Content Include="Views\AdminStudentAffair\Index.cshtml" />
+    <Content Include="Views\AdminStudentAffair\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202301271008545_createDb.resx">
       <DependentUpon>202301271008545_createDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301271517220_passwordUpdate.resx">
+      <DependentUpon>202301271517220_passwordUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

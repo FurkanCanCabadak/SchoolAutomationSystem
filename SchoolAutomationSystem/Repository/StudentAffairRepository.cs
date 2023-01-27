@@ -41,6 +41,7 @@ namespace SchoolAutomationSystem.Repository
             var studentAffair = db.StudentAffair.Find(id);
             if (studentAffair != null)
             {
+                studentAffair.RoleId = 2;
                 studentAffair.IsDelete = true;
                 db.SaveChanges();
                 result = true;
@@ -69,7 +70,8 @@ namespace SchoolAutomationSystem.Repository
                 studentAffair.Surname = entity.Surname;
                 studentAffair.Email = entity.Email;
                 studentAffair.Phone = entity.Phone;
-                studentAffair.RoleId = entity.RoleId;
+                studentAffair.Password= entity.Password;
+                studentAffair.IsStatus= entity.IsStatus;
                 db.SaveChanges();
                 result = true;
             }
