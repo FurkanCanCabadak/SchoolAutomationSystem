@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminDepartmentController.cs" />
     <Compile Include="Controllers\AdminFacultyController.cs" />
     <Compile Include="Controllers\AdminRoleController.cs" />
     <Compile Include="Controllers\AdminStudentAffairController.cs" />
@@ -1439,7 +1440,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AdminFaculty\" />
+    <Folder Include="Views\AdminDepartment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1641,6 +1642,8 @@
     <Content Include="Views\Shared\_TeacherLayout.cshtml" />
     <Content Include="Views\AdminStudentAffair\Index.cshtml" />
     <Content Include="Views\AdminStudentAffair\Edit.cshtml" />
+    <Content Include="Views\AdminFaculty\Index.cshtml" />
+    <Content Include="Views\AdminFaculty\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202301271008545_createDb.resx">

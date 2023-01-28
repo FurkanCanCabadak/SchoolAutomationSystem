@@ -20,7 +20,7 @@ namespace SchoolAutomationSystem.Repository
                 faculty.Name = entity.Name;
                 faculty.SelectionStart = entity.SelectionStart;
                 faculty.SelectionEnd = entity.SelectionEnd;
-
+                faculty.IsStatus = entity.IsStatus;
                 db.Faculty.Add(faculty);
                 db.SaveChanges();
                 result = true;
@@ -62,6 +62,7 @@ namespace SchoolAutomationSystem.Repository
                 faculty.Name = entity.Name;
                 faculty.SelectionStart = entity.SelectionStart;
                 faculty.SelectionEnd = entity.SelectionEnd;
+                faculty.IsStatus= entity.IsStatus;
                 db.SaveChanges();
                 result = true;
             }
