@@ -151,6 +151,7 @@
     <Compile Include="Models\Abstract\AbstractGeneric.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\EntityModel\DepartmentFaculty.cs" />
     <Compile Include="Models\EntityModel\SecurityModel.cs" />
     <Compile Include="Models\EntityModel\TeacherRoleLesson.cs" />
     <Compile Include="Models\Faculty.cs" />
@@ -1440,7 +1441,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AdminDepartment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1644,6 +1644,7 @@
     <Content Include="Views\AdminStudentAffair\Edit.cshtml" />
     <Content Include="Views\AdminFaculty\Index.cshtml" />
     <Content Include="Views\AdminFaculty\Edit.cshtml" />
+    <Content Include="Views\AdminDepartment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202301271008545_createDb.resx">

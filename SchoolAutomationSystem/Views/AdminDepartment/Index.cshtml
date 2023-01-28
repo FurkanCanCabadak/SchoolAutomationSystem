@@ -1,4 +1,4 @@
-﻿@model List<SchoolAutomationSystem.Models.Faculty>
+﻿@model SchoolAutomationSystem.Models.EntityModel.DepartmentFaculty
 
 @{
     ViewBag.Title = "Index";
@@ -13,12 +13,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Faculties</h4>
+                    <h4 class="mb-sm-0">Departments</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="~/Admin">Admin</a></li>
-                            <li class="breadcrumb-item active">Faculties</li>
+                            <li class="breadcrumb-item active">Departments</li>
                         </ol>
                     </div>
 
@@ -31,7 +31,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title mb-0">Faculty List </h4>
+                        <h4 class="card-title mb-0">Department List </h4>
                     </div><!-- end card header -->
 
                     <div class="card-body">
@@ -60,43 +60,45 @@
 
                                             <th class="sort" data-sort="number">#</th>
                                             <th class="sort" data-sort="name">Name</th>
-                                            <th class="sort" data-sort="date">Selection Start</th>
-                                            <th class="sort" data-sort="date">Selection End</th>
+                                            <th class="sort" data-sort="credit">Min Graduate Credit</th>
+                                            <th class="sort" data-sort="pay">Pay</th>
+                                            <th class="sort" data-sort="facultyname">Faculty Name</th>
                                             <th class="sort" data-sort="status">Status</th>
                                             <th class="sort" data-sort="action">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
-                                        @foreach (var faculty in Model)
+                                        @foreach (var department in Model.DepartmentList)
                                         {
                                             sayi++;
                                             <tr>
 
                                                 <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
                                                 <td class="number">@sayi</td>
-                                                <td class="name">@faculty.Name</td>
-                                                <td class="date">@faculty.SelectionStart.ToString("dd/MM/yyyy")</td>
-                                                <td class="date">@faculty.SelectionEnd.ToString("dd/MM/yyyy")</td>
+                                                <td class="name">@department.Name</td>
+                                                <td class="number">@department.MinGraduateCredit</td>
+                                                <td class="number">@department.Pay.ToString("C")</td>
+                                                <td class="name">@Model.FacultyList.FirstOrDefault(x=>x.Id == department.FacultyId).Name</td>
                                                 <td class="status">
                                                     @{
                                                         string[,] status = { { "Active", "Passive" }, { "success", "danger" } };
                                                     }
-                                                    <span class="btn btn-sm btn-soft-@(faculty.IsStatus == true ? status[1, 0] : status[1,1]) text-uppercase">
-                                                        @(faculty.IsStatus == true ? status[0, 0] : status[0,1])
+                                                    <span class="btn btn-sm btn-soft-@(department.IsStatus == true ? status[1, 0] : status[1,1]) text-uppercase">
+                                                        @(department.IsStatus == true ? status[0, 0] : status[0,1])
                                                     </span>
                                                 </td>
-                                                <td class="action" >
-                                                    <div class="d-flex gap-2" style="text-align:center " >
-                                                        <div class="edit" >
-                                                            <a class="btn btn-sm btn-success edit-item-btn" href="~/AdminFaculty/Edit/@faculty.Id">Edit</a>
+                                                <td class="action">
+                                                    <div class="d-flex gap-2">
+                                                        <div class="edit">
+                                                            <a class="btn btn-sm btn-success edit-item-btn" href="~/AdminDepartment/Edit/@department.Id">Edit</a>
                                                         </div>
                                                         <div class="remove">
-                                                            <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal-@faculty.Id">Remove</button>
+                                                            <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal-@department.Id">Remove</button>
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <div class="modal fade zoomIn" id="deleteRecordModal-@faculty.Id" tabindex="-1" aria-hidden="true">
+                                            <div class="modal fade zoomIn" id="deleteRecordModal-@department.Id" tabindex="-1" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -112,7 +114,7 @@
                                                             </div>
                                                             <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
                                                                 <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
-                                                                <a class="btn w-sm btn-danger " id="delete-record" href="~/AdminFaculty/Delete/@faculty.Id">Yes, Delete It!</a>
+                                                                <a class="btn w-sm btn-danger " id="delete-record" href="~/AdminDepartment/Delete/@department.Id">Yes, Delete It!</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -160,24 +162,36 @@
                         <h5 class="modal-title" id="exampleModalLabel"></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
                     </div>
-                    <form method="post" action="~/AdminFaculty/Add">
+                    <form method="post" action="~/AdminDepartment/Add">
                         <div class="modal-body">
 
 
 
                             <div class="mb-3">
-                                <label for="customername-field" class="form-label">Faculty Name</label>
-                                <input type="text" id="Name" name="Name" class="form-control" placeholder="Enter Faculty Name" required />
+                                <label for="customername-field" class="form-label">Department Name</label>
+                                <input type="text" id="Name" name="Name" class="form-control" placeholder="Enter Department Name" required />
                             </div>
                             <div class="mb-3">
-                                <label for="customername-field" class="form-label">Faculty Selection Start Date</label>
-                                <input type="date" id="SelectionStart" name="SelectionStart" class="form-control" required />
+                                <label for="customername-field" class="form-label">Department Min Gradueate Credit</label>
+                                <input type="number" id="MinGraduateCredit" name="MinGraduateCredit" class="form-control"  required />
                             </div>
                             <div class="mb-3">
-                                <label for="customername-field" class="form-label">Faculty Selection End Date</label>
-                                <input type="date" id="SelectionEnd" name="SelectionEnd" class="form-control" required />
+                                <label for="customername-field" class="form-label">Department Pay</label>
+                                <input type="number" id="Pay" name="Pay" class="form-control" required />
                             </div>
-
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="basiInput" class="form-label">Faculty</label>
+                                    <select name="FacultyId" id="FacultyId" class="form-control">
+                                        @foreach (var faculty in Model.FacultyList.ToList())
+                                        {
+                                            <option value="@faculty.Id">
+                                                @faculty.Name
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
                             <div>
                                 <label for="status-field" class="form-label">Status</label>
                                 <div class="form-check form-switch form-switch-secondary">

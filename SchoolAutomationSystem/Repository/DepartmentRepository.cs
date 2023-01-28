@@ -21,7 +21,7 @@ namespace SchoolAutomationSystem.Repository
                 department.MinGraduateCredit = entity.MinGraduateCredit;
                 department.Pay = entity.Pay;
                 department.FacultyId = entity.FacultyId;
-
+                department.IsStatus= entity.IsStatus;
                 db.Department.Add(department);
                 db.SaveChanges();
                 result = true;
@@ -63,6 +63,7 @@ namespace SchoolAutomationSystem.Repository
                 department.Name = entity.Name;
                 department.MinGraduateCredit = entity.MinGraduateCredit;
                 department.Pay = entity.Pay;
+                department.IsStatus = entity.IsStatus;
                 department.FacultyId = entity.FacultyId;
                 db.SaveChanges();
                 result = true;
