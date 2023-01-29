@@ -1645,6 +1645,7 @@
     <Content Include="Views\AdminFaculty\Index.cshtml" />
     <Content Include="Views\AdminFaculty\Edit.cshtml" />
     <Content Include="Views\AdminDepartment\Index.cshtml" />
+    <Content Include="Views\AdminDepartment\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202301271008545_createDb.resx">
