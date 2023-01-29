@@ -22,7 +22,7 @@ namespace SchoolAutomationSystem.Repository
                 lesson.Credit = entity.Credit;
                 lesson.SelectionalTerm = entity.SelectionalTerm;
                 lesson.DepartmentId = entity.DepartmentId;
-
+                lesson.IsStatus= entity.IsStatus;
                 db.Lesson.Add(lesson);
                 db.SaveChanges();
                 result = true;
@@ -65,6 +65,7 @@ namespace SchoolAutomationSystem.Repository
                 lesson.Credit = entity.Credit;
                 lesson.SelectionalTerm = entity.SelectionalTerm;
                 lesson.DepartmentId = entity.DepartmentId;
+                lesson.IsStatus = entity.IsStatus;
                 db.SaveChanges();
                 result = true;
             }

@@ -131,6 +131,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminDepartmentController.cs" />
     <Compile Include="Controllers\AdminFacultyController.cs" />
+    <Compile Include="Controllers\AdminLessonController.cs" />
     <Compile Include="Controllers\AdminRoleController.cs" />
     <Compile Include="Controllers\AdminStudentAffairController.cs" />
     <Compile Include="Controllers\AdminTeacherController.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\EntityModel\DepartmentFaculty.cs" />
+    <Compile Include="Models\EntityModel\LessonDepartment.cs" />
     <Compile Include="Models\EntityModel\SecurityModel.cs" />
     <Compile Include="Models\EntityModel\TeacherRoleLesson.cs" />
     <Compile Include="Models\Faculty.cs" />
@@ -1646,6 +1648,8 @@
     <Content Include="Views\AdminFaculty\Edit.cshtml" />
     <Content Include="Views\AdminDepartment\Index.cshtml" />
     <Content Include="Views\AdminDepartment\Edit.cshtml" />
+    <Content Include="Views\AdminLesson\Index.cshtml" />
+    <Content Include="Views\AdminLesson\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202301271008545_createDb.resx">

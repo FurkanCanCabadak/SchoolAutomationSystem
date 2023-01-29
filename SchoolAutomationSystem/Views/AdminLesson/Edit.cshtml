@@ -1,0 +1,85 @@
+﻿@model SchoolAutomationSystem.Models.EntityModel.LessonDepartment
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Edit Lesson</h4>
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="~/AdminLesson">Lesson List</a></li>
+                            <li class="breadcrumb-item active">Edit Lesson</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header align-items-center d-flex">
+                        <h4 class="card-title mb-0 flex-grow-1">Edit Lesson - @Model.SingleLesson.Name </h4>
+                        <b class="text-warning">@ViewBag.Message</b>
+                    </div><!-- end card header -->
+                    <div class="card-body">
+                        <div class="live-preview">
+                            <form method="post">
+                                <div class="col-md-12">
+                                    <label for="customername-field" class="form-label">Lesson Name</label>
+                                    <input type="text" id="Name" name="Name" class="form-control" value="@Model.SingleLesson.Name" required />
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="customername-field" class="form-label">Lesson Credit</label>
+                                    <input type="number" id="Credit" name="Credit" class="form-control" value="@Model.SingleLesson.Credit" required />
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="customername-field" class="form-label">Lesson Selectional Term</label>
+                                    <input type="number" id="SelectionalTerm" name="SelectionalTerm" class="form-control" value="@Model.SingleLesson.SelectionalTerm" required />
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label for="basiInput" class="form-label">Department</label>
+                                        <select name="DepartmenId" id="DepartmenId" class="form-control">
+                                            <option value="@Model.SingleDepartment.Id">@Model.SingleDepartment.Name</option>
+                                            <optgroup>
+                                                @foreach (var department in Model.DepartmentList.ToList())
+                                                {
+                                                    <option value="@department.Id">
+                                                        @department.Name
+                                                    </option>
+                                                }
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="status-field" class="form-label">Status</label>
+                                    <div class="form-check form-switch form-switch-secondary">
+                                        <input class="form-check-input" type="checkbox" role="switch" name="IsStatus" id="IsStatus" data-val="true" value="@Model.SingleLesson.IsStatus" checked>
+                                    </div>
+                                </div>
+                            </form>
+                            <!--end row-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+
+
+    </div> <!-- container-fluid -->
+</div><!-- End Page-content -->

@@ -54,7 +54,7 @@ namespace SchoolAutomationSystem.Controllers
                                    "Role Edit Successful" :
                                    "Role Edit Failed";
 
-            return View(roleRepository.Detail(role.Id));
+            return Redirect(Request.UrlReferrer.ToString());
         }
 
     }
