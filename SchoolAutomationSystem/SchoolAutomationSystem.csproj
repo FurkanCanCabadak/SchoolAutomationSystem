@@ -136,17 +136,18 @@
     <Compile Include="Controllers\AdminStudentAffairController.cs" />
     <Compile Include="Controllers\AdminTeacherController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="DataAccessLayer\DataAccess.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202301271008545_createDb.cs" />
-    <Compile Include="Migrations\202301271008545_createDb.designer.cs">
-      <DependentUpon>202301271008545_createDb.cs</DependentUpon>
+    <Compile Include="Migrations\202301302253396_createDb.cs" />
+    <Compile Include="Migrations\202301302253396_createDb.designer.cs">
+      <DependentUpon>202301302253396_createDb.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202301271517220_passwordUpdate.cs" />
-    <Compile Include="Migrations\202301271517220_passwordUpdate.designer.cs">
-      <DependentUpon>202301271517220_passwordUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\202301302300193_updateDb.cs" />
+    <Compile Include="Migrations\202301302300193_updateDb.designer.cs">
+      <DependentUpon>202301302300193_updateDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\AbstractGeneric.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Models\EntityModel\TeacherRoleLesson.cs" />
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\Lesson.cs" />
+    <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\SelectionLesson.cs" />
     <Compile Include="Models\Student.cs" />
@@ -1650,13 +1652,15 @@
     <Content Include="Views\AdminDepartment\Edit.cshtml" />
     <Content Include="Views\AdminLesson\Index.cshtml" />
     <Content Include="Views\AdminLesson\Edit.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Student\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202301271008545_createDb.resx">
-      <DependentUpon>202301271008545_createDb.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202301302253396_createDb.resx">
+      <DependentUpon>202301302253396_createDb.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202301271517220_passwordUpdate.resx">
-      <DependentUpon>202301271517220_passwordUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202301302300193_updateDb.resx">
+      <DependentUpon>202301302300193_updateDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

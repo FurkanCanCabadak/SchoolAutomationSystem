@@ -30,9 +30,9 @@ namespace SchoolAutomationSystem.Repository
                 student.IsPayment = entity.IsPayment;
                 student.IsGraduate = entity.IsGraduate;
                 student.RoleId = entity.RoleId;
-                student.DepartmenttId = entity.DepartmenttId;
-
-
+                student.DepartmentId = entity.DepartmentId;
+                student.IsStatus= entity.IsStatus;
+                student.IsDelete = false;
 
 
                 db.Student.Add(student);
@@ -66,7 +66,12 @@ namespace SchoolAutomationSystem.Repository
 
             return student;
         }
+        public Student DetailwithName(string userName)
+        {
+            var student = db.Student.FirstOrDefault(x=>x.UserName==userName);
 
+            return student;
+        }
         public bool Edit(Student entity)
         {
 
@@ -89,7 +94,8 @@ namespace SchoolAutomationSystem.Repository
                 student.IsPayment = entity.IsPayment;
                 student.IsGraduate = entity.IsGraduate;
                 student.RoleId = entity.RoleId;
-                student.DepartmenttId = entity.DepartmenttId;
+                student.DepartmentId = entity.DepartmentId;
+                student.IsStatus = entity.IsStatus;
                 db.SaveChanges();
                 result = true;
             }

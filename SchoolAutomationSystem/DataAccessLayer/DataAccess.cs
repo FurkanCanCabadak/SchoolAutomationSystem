@@ -20,5 +20,6 @@ namespace SchoolAutomationSystem.DataAccessLayer
         public DbSet<Teacher> Teacher { get; set; }
         public DbSet<Student> Student { get; set; }
         public DbSet<SelectionLesson> SelectionLesson { get; set; }
+        public DbSet<Note> Note { get; set; }
     }
 }

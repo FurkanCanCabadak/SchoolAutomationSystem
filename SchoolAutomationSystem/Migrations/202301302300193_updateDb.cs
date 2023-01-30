@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class passwordUpdate : DbMigration
+    public partial class updateDb : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.StudentAffairs", "Password", c => c.String());
+            AlterColumn("dbo.Students", "UserName", c => c.String());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.StudentAffairs", "Password");
+            AlterColumn("dbo.Students", "UserName", c => c.Int(nullable: false));
         }
     }
 }

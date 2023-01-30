@@ -12,7 +12,7 @@ namespace SchoolAutomationSystem.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public int UserName { get; set; }
+        public string UserName { get; set; }
         public string Image { get; set; }
         public string TCNumber { get; set; }
         public string Password { get; set; }
@@ -26,7 +26,7 @@ namespace SchoolAutomationSystem.Models
         public bool IsGraduate { get; set; }//Mezun olup olmadığı.
         public int RoleId { get; set; }
         public Role Role { get; set; }
-        public int DepartmenttId { get; set; }
+        public int DepartmentId { get; set; }
         public Department Department { get; set; }
         public List<SelectionLesson> SelectionLesson { get; set; }//Seçilen derslerin listesi
     }
