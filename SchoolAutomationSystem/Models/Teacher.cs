@@ -6,7 +6,7 @@ using System.Web;
 
 namespace SchoolAutomationSystem.Models
 {
-    public class Teacher:AbstractGeneric
+    public class Teacher:User
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -15,10 +15,6 @@ namespace SchoolAutomationSystem.Models
         public string Phone { get; set; }
         public string Title { get; set; }
         public string Image { get; set; }
-        public string UserName { get; set; }//Bu numara ile giriş olacak.
-        public string Password { get; set; }
-        public int RoleId { get; set; }
-        public Role Role { get; set; }
         public int LessonId { get; set; }
         public Lesson Lesson { get; set; }
     }

@@ -1,4 +1,5 @@
 ﻿using SchoolAutomationSystem.DataAccessLayer;
+using SchoolAutomationSystem.Models.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,10 @@ namespace SchoolAutomationSystem.Models.EntityModel
 
         public int Login(string UserName, string Password, string Remember)
         {
+            db.FillUser();
+            var list = db.GetUsers();
             bool remem = Remember == "on" ? true : false;
-            var admin = db.Admin.FirstOrDefault(x => x.UserName == UserName && x.Password == Password);
+            var admin = list.FirstOrDefault(x => x.UserName == UserName && x.Password == Password);
             int result = 0;
             if (admin != null)
             {
@@ -38,33 +41,7 @@ namespace SchoolAutomationSystem.Models.EntityModel
 
             return result;
         }
-        public int LoginStudent(string UserName, string Password, string Remember)
-        {
-            bool remem = Remember == "on" ? true : false;
-            var student = db.Student.FirstOrDefault(x => x.UserName == UserName && x.Password == Password);
-            int result = 0;
-            if (student != null)
-            {
-                if (student.IsStatus == true && student.IsDelete == false)
-                {
-                    FormsAuthentication.SetAuthCookie(UserName, remem);
-                    
-                    result = 1;
-                }
-
-                else if (student.IsStatus == false)
-                {
-                    result = 3;
-                }
-                else if (student.IsDelete == true)
-                {
-                    result = 4;
-                }
-            }
-
-
-            return result;
-        }
+        
         public void Logout()
         {
             FormsAuthentication.SignOut();
