@@ -24,18 +24,17 @@ namespace SchoolAutomationSystem.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(string userName, string Password, string Remember)
+        public ActionResult Login(string UserName, string Password, string Remember)
         {
-            int result = security.LoginStudent(userName, Password, Remember);
+            int result = security.LoginStudent(UserName, Password, Remember);
             ViewBag.Message = result == 0 ?
-                            "Kullanıcı numarası veya Şifre Hatalı." :
+                            "Öğrenci ismi veya Şifre Hatalı." :
                             result == 2 ?
                             "Hesap Aktif Değil. Aktivasyon Kodu ile Aktifleştiriniz." :
                             result == 4 ?
                             "Hesap Silinmiştir. Lütfen Farklı Bir Hesap Deneyiniz." : "Giriş Başarılı";
             if (result == 1)
             {
-
                 return RedirectToAction("Index");
             }
             return View();
@@ -43,7 +42,7 @@ namespace SchoolAutomationSystem.Controllers
         public ActionResult Logout()
         {
             security.Logout();
-            return RedirectToAction("Login");
+            return RedirectToAction("Login","Student");
         }
     }
 }

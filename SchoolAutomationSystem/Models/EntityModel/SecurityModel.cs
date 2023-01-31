@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using System.Web.Security;
 
 namespace SchoolAutomationSystem.Models.EntityModel
@@ -11,17 +12,16 @@ namespace SchoolAutomationSystem.Models.EntityModel
     {
         DataAccess db = new DataAccess();
 
-        public int Login(string userName, string Password, string Remember)
+        public int Login(string UserName, string Password, string Remember)
         {
             bool remem = Remember == "on" ? true : false;
-            var admin = db.Admin.FirstOrDefault(x => x.UserName == userName && x.Password == Password);
-            var student = db.Student.FirstOrDefault(x => x.UserName == userName && x.Password == Password);
+            var admin = db.Admin.FirstOrDefault(x => x.UserName == UserName && x.Password == Password);
             int result = 0;
             if (admin != null)
             {
                 if (admin.IsStatus == true && admin.IsDelete == false)
                 {
-                    FormsAuthentication.SetAuthCookie(admin.Name, remem);
+                    FormsAuthentication.SetAuthCookie(UserName, remem);
                     result = 1;
                 }
                 
@@ -38,16 +38,17 @@ namespace SchoolAutomationSystem.Models.EntityModel
 
             return result;
         }
-        public int LoginStudent(string userName, string Password, string Remember)
+        public int LoginStudent(string UserName, string Password, string Remember)
         {
             bool remem = Remember == "on" ? true : false;
-            var student = db.Student.FirstOrDefault(x => x.UserName == userName && x.Password == Password);
+            var student = db.Student.FirstOrDefault(x => x.UserName == UserName && x.Password == Password);
             int result = 0;
             if (student != null)
             {
                 if (student.IsStatus == true && student.IsDelete == false)
                 {
-                    FormsAuthentication.SetAuthCookie(student.Name, remem);
+                    FormsAuthentication.SetAuthCookie(UserName, remem);
+                    
                     result = 1;
                 }
 
