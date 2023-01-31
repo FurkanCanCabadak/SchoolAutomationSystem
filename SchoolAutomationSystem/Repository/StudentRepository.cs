@@ -29,7 +29,7 @@ namespace SchoolAutomationSystem.Repository
                 student.TotalCredit = entity.TotalCredit;
                 student.IsPayment = entity.IsPayment;
                 student.IsGraduate = entity.IsGraduate;
-                student.RoleId = entity.RoleId;
+                student.RoleId = 4;
                 student.DepartmentId = entity.DepartmentId;
                 student.IsStatus= entity.IsStatus;
                 student.IsDelete = false;
@@ -129,6 +129,21 @@ namespace SchoolAutomationSystem.Repository
             {
                 Student student = db.Student.Find(entity.Id);
                 student.IsPayment = entity.IsPayment;
+                db.SaveChanges();
+                result = true;
+            }
+            catch { }
+            return result;
+        }
+        public bool PaymentSA(Student entity)
+        {
+
+            bool result = false;
+            try
+            {
+                Student student = db.Student.Find(entity.Id);
+                student.IsPayment = entity.IsPayment;
+                student.Term += 1;
                 db.SaveChanges();
                 result = true;
             }

@@ -133,6 +133,9 @@
     <Compile Include="Controllers\AdminStudentAffairController.cs" />
     <Compile Include="Controllers\AdminTeacherController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentAffairController.cs" />
+    <Compile Include="Controllers\StudentAffairPaymentController.cs" />
+    <Compile Include="Controllers\StudentAffairStudentController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\StudentInfoController.cs" />
     <Compile Include="Controllers\StudentNoteController.cs" />
@@ -159,6 +162,7 @@
     <Compile Include="Models\EntityModel\LessonDepartment.cs" />
     <Compile Include="Models\EntityModel\SASRoleProvider.cs" />
     <Compile Include="Models\EntityModel\SecurityModel.cs" />
+    <Compile Include="Models\EntityModel\StudentDepartment.cs" />
     <Compile Include="Models\EntityModel\StudentLessonSelectionLesson.cs" />
     <Compile Include="Models\EntityModel\TeacherRoleLesson.cs" />
     <Compile Include="Models\Faculty.cs" />
@@ -1470,6 +1474,11 @@
     <Content Include="Views\StudentPayment\Edit.cshtml" />
     <Content Include="Views\StudentSelectionLesson\Index.cshtml" />
     <Content Include="Views\StudentSelectionLesson\Add.cshtml" />
+    <Content Include="Views\StudentAffair\Index.cshtml" />
+    <Content Include="Views\StudentAffairPayment\Index.cshtml" />
+    <Content Include="Views\StudentAffairPayment\Edit.cshtml" />
+    <Content Include="Views\StudentAffairStudent\Index.cshtml" />
+    <Content Include="Views\StudentAffairStudent\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
