@@ -53,6 +53,12 @@ namespace SchoolAutomationSystem.Repository
 
             return lesson;
         }
+        public Lesson DetailwithName(string name)
+        {
+            var lesson = db.Lesson.FirstOrDefault(x=>x.Name==name);
+
+            return lesson;
+        }
 
         public bool Edit(Lesson entity)
         {

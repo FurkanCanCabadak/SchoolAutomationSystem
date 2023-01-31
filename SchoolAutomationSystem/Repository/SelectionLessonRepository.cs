@@ -18,10 +18,10 @@ namespace SchoolAutomationSystem.Repository
             {
                 var selectionLesson = new SelectionLesson();
 
-                selectionLesson.VisaNote = entity.VisaNote;
-                selectionLesson.FinalNote = entity.FinalNote;
+                selectionLesson.VisaNote = 0;
+                selectionLesson.FinalNote = 0;
                 selectionLesson.StudentId = entity.StudentId;
-                selectionLesson.SelectionTime = entity.SelectionTime;
+                selectionLesson.SelectionTime = DateTime.Now;
                 selectionLesson.LessonId = entity.LessonId;
                 db.SelectionLesson.Add(selectionLesson);
                 db.SaveChanges();
