@@ -16,7 +16,7 @@ namespace SchoolAutomationSystem.Models.EntityModel
         public int Login(string UserName, string Password, string Remember)
         {
             db.FillUser();
-            var list = db.GetUsers();
+            var list = db.GetUser();
             bool remem = Remember == "on" ? true : false;
             var admin = list.FirstOrDefault(x => x.UserName == UserName && x.Password == Password);
             int result = 0;

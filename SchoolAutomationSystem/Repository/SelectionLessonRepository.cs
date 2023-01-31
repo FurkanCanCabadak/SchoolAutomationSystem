@@ -80,5 +80,9 @@ namespace SchoolAutomationSystem.Repository
         {
             return db.SelectionLesson.Where(x => x.IsDelete == false).ToList();
         }
+        public List<SelectionLesson> List(int id)
+        {
+            return db.SelectionLesson.Where(x => x.IsDelete == false&& x.StudentId==id).ToList();
+        }
     }
 }

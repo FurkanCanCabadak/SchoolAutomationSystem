@@ -39,7 +39,7 @@ namespace SchoolAutomationSystem.Models.EntityModel
 
         public override string[] GetRolesForUser(string username)
         {
-            var list = db.GetUsers();
+            var list = db.GetUser();
             var user = list.FirstOrDefault(x => x.UserName == username);
             var role = db.Role.Find(user.RoleId);
             return new string[] { role.Name };

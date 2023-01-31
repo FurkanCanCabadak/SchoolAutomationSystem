@@ -135,6 +135,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\StudentInfoController.cs" />
+    <Compile Include="Controllers\StudentNoteController.cs" />
     <Compile Include="DataAccessLayer\DataAccess.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -156,6 +157,7 @@
     <Compile Include="Models\EntityModel\LessonDepartment.cs" />
     <Compile Include="Models\EntityModel\SASRoleProvider.cs" />
     <Compile Include="Models\EntityModel\SecurityModel.cs" />
+    <Compile Include="Models\EntityModel\StudentLessonSelectionLesson.cs" />
     <Compile Include="Models\EntityModel\TeacherRoleLesson.cs" />
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\Lesson.cs" />
@@ -171,6 +173,7 @@
     <Compile Include="Repository\FacultyRepository.cs" />
     <Compile Include="Repository\IGenericRepository.cs" />
     <Compile Include="Repository\LessonRepository.cs" />
+    <Compile Include="Repository\NoteRepository.cs" />
     <Compile Include="Repository\RoleRepository.cs" />
     <Compile Include="Repository\SelectionLessonRepository.cs" />
     <Compile Include="Repository\StudentAffairRepository.cs" />
@@ -1458,10 +1461,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\StudentInfo\Index.cshtml" />
+    <Content Include="Views\StudentInfo\Edit.cshtml" />
+    <Content Include="Views\StudentNote\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\StudentInfo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Admin\assets\fonts\boxicons.eot" />

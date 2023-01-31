@@ -102,7 +102,25 @@ namespace SchoolAutomationSystem.Repository
             catch { }
             return result;
         }
+        public bool EditSelf(Student entity)
+        {
 
+            bool result = false;
+            try
+            {
+
+                Student student = db.Student.Find(entity.Id);
+                student.Name = entity.Name;
+                student.Surname = entity.Surname;
+                student.TCNumber = entity.TCNumber;
+                student.Email = entity.Email;
+                student.Phone = entity.Phone;
+                db.SaveChanges();
+                result = true;
+            }
+            catch { }
+            return result;
+        }
         public List<Student> List()
         {
             return db.Student.Where(x => x.IsDelete == false).ToList();

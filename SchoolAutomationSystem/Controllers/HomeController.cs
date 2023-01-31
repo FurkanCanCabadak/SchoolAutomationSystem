@@ -43,7 +43,7 @@ namespace SchoolAutomationSystem.Controllers
         {
             int result = security.Login(UserName, Password, Remember);
             ViewBag.Message = result == 0 ?
-                            "Öğrenci ismi veya Şifre Hatalı." :
+                            "Hesap ismi veya Şifre Hatalı." :
                             result == 2 ?
                             "Hesap Aktif Değil. Aktivasyon Kodu ile Aktifleştiriniz." :
                             result == 4 ?

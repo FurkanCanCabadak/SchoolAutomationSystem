@@ -1,0 +1,93 @@
+﻿@model SchoolAutomationSystem.Models.EntityModel.StudentLessonSelectionLesson
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StudentsLayout.cshtml";
+    double ortalama=0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Notes</h4>
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="~/Student/Index">Student</a></li>
+                            <li class="breadcrumb-item active">Notes</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title mb-0">Notes</h4>
+                    </div><!-- end card header -->
+
+                    <div class="card-body">
+                        <div id="customerList">
+                            <div class="table-responsive table-card mt-3 mb-1">
+                                <table class="table align-middle table-nowrap" id="customerTable">
+                                    <thead class="table-light">
+                                        <tr>
+
+                                            <th class="sort" data-sort="name">Name</th>
+                                            <th class="sort" data-sort="visa">Visa</th>
+                                            <th class="sort" data-sort="final">Final</th>
+                                            <th class="sort" data-sort="credit">Credit</th>
+                                            <th class="sort" data-sort="note">Note</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list form-check-all">
+                                        @foreach (var selectionLesson in Model.SelectionLessonList)
+                                        {
+                                            ortalama = @selectionLesson.VisaNote+@selectionLesson.FinalNote;
+                                            <tr>
+
+                                                @*<td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>*@
+                                                <td class="name">@Model.LessonList.FirstOrDefault(x => x.Id == selectionLesson.LessonId).Name</td>
+                                                <td class="visa">@selectionLesson.VisaNote</td>
+                                                <td class="final">@selectionLesson.FinalNote</td>
+                                                <td class="credit">@Model.LessonList.FirstOrDefault(x => x.Id == selectionLesson.LessonId).Credit</td>
+                                                @if ((ortalama / 2) > 90)
+                                                {
+                                                    <td class="note">AA</td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="note">@Model.NoteList.FirstOrDefault(x => x.Max >= (ortalama / 2) && x.Min <= (ortalama / 2)).Name</td>
+                                                }
+                                            </tr>
+                                            ortalama = 0;
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div><!-- end card -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+
+
+
+
+    </div>
+    <!-- container-fluid -->
+</div>
+
+

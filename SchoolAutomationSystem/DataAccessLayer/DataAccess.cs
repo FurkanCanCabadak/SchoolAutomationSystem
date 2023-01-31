@@ -73,7 +73,7 @@ namespace SchoolAutomationSystem.DataAccessLayer
                 User.Add(user);
             }
         }
-        public List<User> GetUsers()
+        public List<User> GetUser()
         {
             return User;
         }
