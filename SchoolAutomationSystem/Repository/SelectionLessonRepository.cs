@@ -53,19 +53,24 @@ namespace SchoolAutomationSystem.Repository
 
             return selectionLesson;
         }
+        public SelectionLesson DetailwithId(int student,int lesson)
+        {
+            var selectionLesson = db.SelectionLesson.FirstOrDefault(x=>x.LessonId==lesson&& x.StudentId==student);
 
+            return selectionLesson;
+        }
         public bool Edit(SelectionLesson entity)
         {
             bool result = false;
             try
             {
                 SelectionLesson selectionLesson = db.SelectionLesson.Find(entity.Id);
-                selectionLesson.VisaNote = entity.VisaNote;
-                selectionLesson.FinalNote = entity.FinalNote;
+                selectionLesson.VisaNote = 0;
+                selectionLesson.FinalNote = 0;
                 selectionLesson.StudentId = entity.StudentId;
-                selectionLesson.SelectionTime = entity.SelectionTime;
+                selectionLesson.SelectionTime = DateTime.Now;
                 selectionLesson.LessonId = entity.LessonId;
-
+                selectionLesson.IsStatus= entity.IsStatus;
                 db.SaveChanges();
                 result = true;
             }

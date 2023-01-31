@@ -1,8 +1,8 @@
-﻿@model List<SchoolAutomationSystem.Models.Student>
+﻿@model SchoolAutomationSystem.Models.EntityModel.TeacherStudent
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_StudentAffairLayout.cshtml";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
 
 <div class="page-content">
@@ -16,7 +16,7 @@
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="~/StudentAffair/Index">StudentAffair</a></li>
+                            <li class="breadcrumb-item"><a href="~/TeacherAdvisor/Index">Advisor</a></li>
                             <li class="breadcrumb-item active">Students</li>
                         </ol>
                     </div>
@@ -63,47 +63,23 @@
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
-                                        @foreach (var student in Model)
+                                        @foreach (var student in Model.StudentList)
                                         {
                                             <tr>
 
-                                                
+
                                                 <td class="name">@student.Name</td>
                                                 <td class="surname">@student.Surname</td>
                                                 <td class="term">@student.Term</td>
                                                 <td>
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
-                                                            <a class="btn btn-sm btn-success edit-item-btn" href="~/StudentAffairPayment/Edit/@student.Id">Take Pay</a>
+                                                            <a class="btn btn-sm btn-success edit-item-btn" href="~/TeacherAdvisor/Edit/@student.Id">Be Advisor</a>
                                                         </div>
-                                                        <div class="remove">
-                                                            <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal-@student.Id">Remove</button>
-                                                        </div>
+                                                        
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <div class="modal fade zoomIn" id="deleteRecordModal-@student.Id" tabindex="-1" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="mt-2 text-center">
-                                                                <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>
-                                                                <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
-                                                                    <h4>Are you Sure ?</h4>
-                                                                    <p class="text-muted mx-4 mb-0">Are you Sure You want to Remove this Record ?</p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
-                                                                <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
-                                                                <a class="btn w-sm btn-danger " id="delete-record" href="~/StudentAffairPayment/Delete/@student.Id">Yes, Delete It!</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
 
                                         }
 

@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_StudentAffairLayout.cshtml";
+    Layout = "~/Views/Shared/_TeacherLayout.cshtml";
 }
 
 <div class="page-content">
@@ -16,7 +16,7 @@
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="~/StudentAffair/Index">StudentAffair</a></li>
+                            <li class="breadcrumb-item"><a href="~/TeacherLessonConfirm/Index">Lesson Confirm</a></li>
                             <li class="breadcrumb-item active">Students</li>
                         </ol>
                     </div>
@@ -67,14 +67,14 @@
                                         {
                                             <tr>
 
-                                                
+
                                                 <td class="name">@student.Name</td>
                                                 <td class="surname">@student.Surname</td>
                                                 <td class="term">@student.Term</td>
                                                 <td>
                                                     <div class="d-flex gap-2">
                                                         <div class="edit">
-                                                            <a class="btn btn-sm btn-success edit-item-btn" href="~/StudentAffairPayment/Edit/@student.Id">Take Pay</a>
+                                                            <a class="btn btn-sm btn-success edit-item-btn" href="~/TeacherLessonConfirm/Edit/@student.Id">Confirm</a>
                                                         </div>
                                                         <div class="remove">
                                                             <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal-@student.Id">Remove</button>
@@ -98,7 +98,7 @@
                                                             </div>
                                                             <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
                                                                 <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
-                                                                <a class="btn w-sm btn-danger " id="delete-record" href="~/StudentAffairPayment/Delete/@student.Id">Yes, Delete It!</a>
+                                                                <a class="btn w-sm btn-danger " id="delete-record" href="~/TeacherLessonConfirm/Delete/@student.Id">Yes, Delete It!</a>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -135,6 +135,7 @@ namespace SchoolAutomationSystem.Repository
             catch { }
             return result;
         }
+        
         public bool PaymentSA(Student entity)
         {
 
@@ -144,6 +145,20 @@ namespace SchoolAutomationSystem.Repository
                 Student student = db.Student.Find(entity.Id);
                 student.IsPayment = entity.IsPayment;
                 student.Term += 1;
+                db.SaveChanges();
+                result = true;
+            }
+            catch { }
+            return result;
+        }
+        public bool AdvisorChange(Student entity)
+        {
+
+            bool result = false;
+            try
+            {
+                Student student = db.Student.Find(entity.Id);
+                student.AdvisorId = entity.AdvisorId;
                 db.SaveChanges();
                 result = true;
             }

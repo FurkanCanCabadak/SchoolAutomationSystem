@@ -141,8 +141,10 @@
     <Compile Include="Controllers\StudentNoteController.cs" />
     <Compile Include="Controllers\StudentPaymentController.cs" />
     <Compile Include="Controllers\StudentSelectionLessonController.cs" />
+    <Compile Include="Controllers\TeacherAdvisorController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Controllers\TeacherGiveNoteController.cs" />
+    <Compile Include="Controllers\TeacherLessonConfirmController.cs" />
     <Compile Include="DataAccessLayer\DataAccess.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,6 +169,7 @@
     <Compile Include="Models\EntityModel\StudentDepartment.cs" />
     <Compile Include="Models\EntityModel\StudentLessonSelectionLesson.cs" />
     <Compile Include="Models\EntityModel\TeacherRoleLesson.cs" />
+    <Compile Include="Models\EntityModel\TeacherStudent.cs" />
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\Lesson.cs" />
     <Compile Include="Models\Note.cs" />
@@ -1484,6 +1487,10 @@
     <Content Include="Views\Teacher\Index.cshtml" />
     <Content Include="Views\TeacherGiveNote\Index.cshtml" />
     <Content Include="Views\TeacherGiveNote\Edit.cshtml" />
+    <Content Include="Views\TeacherAdvisor\Index.cshtml" />
+    <Content Include="Views\TeacherAdvisor\Edit.cshtml" />
+    <Content Include="Views\TeacherLessonConfirm\Index.cshtml" />
+    <Content Include="Views\TeacherLessonConfirm\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
