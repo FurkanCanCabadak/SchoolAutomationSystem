@@ -51,7 +51,7 @@
                                     <tbody class="list form-check-all">
                                         @foreach (var selectionLesson in Model.SelectionLessonList)
                                         {
-                                            ortalama = @selectionLesson.VisaNote+@selectionLesson.FinalNote;
+                                            ortalama = ((@selectionLesson.VisaNote+@selectionLesson.FinalNote)/2);
                                             <tr>
 
                                                 @*<td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>*@
@@ -59,13 +59,13 @@
                                                 <td class="visa">@selectionLesson.VisaNote</td>
                                                 <td class="final">@selectionLesson.FinalNote</td>
                                                 <td class="credit">@Model.LessonList.FirstOrDefault(x => x.Id == selectionLesson.LessonId).Credit</td>
-                                                @if ((ortalama / 2) > 90)
+                                                @if (ortalama  > 90)
                                                 {
                                                     <td class="note">AA</td>
                                                 }
                                                 else
                                                 {
-                                                    <td class="note">@Model.NoteList.FirstOrDefault(x => x.Max >= (ortalama / 2) && x.Min <= (ortalama / 2)).Name</td>
+                                                    <td class="note">@Model.NoteList.FirstOrDefault(x => x.Max >= ortalama && x.Min <= ortalama).Name</td>
                                                 }
                                             </tr>
                                             ortalama = 0;

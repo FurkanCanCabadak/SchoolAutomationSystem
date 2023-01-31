@@ -121,6 +121,20 @@ namespace SchoolAutomationSystem.Repository
             catch { }
             return result;
         }
+        public bool Payment(Student entity)
+        {
+
+            bool result = false;
+            try
+            {
+                Student student = db.Student.Find(entity.Id);
+                student.IsPayment = entity.IsPayment;
+                db.SaveChanges();
+                result = true;
+            }
+            catch { }
+            return result;
+        }
         public List<Student> List()
         {
             return db.Student.Where(x => x.IsDelete == false).ToList();
