@@ -59,14 +59,13 @@ namespace SchoolAutomationSystem.Repository
             bool result = false;
             try
             {
-                var selectionLesson = new SelectionLesson();
+                SelectionLesson selectionLesson = db.SelectionLesson.Find(entity.Id);
                 selectionLesson.VisaNote = entity.VisaNote;
                 selectionLesson.FinalNote = entity.FinalNote;
                 selectionLesson.StudentId = entity.StudentId;
                 selectionLesson.SelectionTime = entity.SelectionTime;
                 selectionLesson.LessonId = entity.LessonId;
 
-                db.SelectionLesson.Add(selectionLesson);
                 db.SaveChanges();
                 result = true;
             }
@@ -75,7 +74,22 @@ namespace SchoolAutomationSystem.Repository
 
             return result;
         }
+        public bool EditNote(SelectionLesson entity)
+        {
+            bool result = false;
+            try
+            {
+                SelectionLesson selectionLesson = db.SelectionLesson.Find(entity.Id);
+                selectionLesson.VisaNote = entity.VisaNote;
+                selectionLesson.FinalNote = entity.FinalNote;
+                db.SaveChanges();
+                result = true;
+            }
+            catch { }
 
+
+            return result;
+        }
         public List<SelectionLesson> List()
         {
             return db.SelectionLesson.Where(x => x.IsDelete == false).ToList();

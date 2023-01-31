@@ -141,6 +141,8 @@
     <Compile Include="Controllers\StudentNoteController.cs" />
     <Compile Include="Controllers\StudentPaymentController.cs" />
     <Compile Include="Controllers\StudentSelectionLessonController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
+    <Compile Include="Controllers\TeacherGiveNoteController.cs" />
     <Compile Include="DataAccessLayer\DataAccess.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1479,6 +1481,9 @@
     <Content Include="Views\StudentAffairPayment\Edit.cshtml" />
     <Content Include="Views\StudentAffairStudent\Index.cshtml" />
     <Content Include="Views\StudentAffairStudent\Edit.cshtml" />
+    <Content Include="Views\Teacher\Index.cshtml" />
+    <Content Include="Views\TeacherGiveNote\Index.cshtml" />
+    <Content Include="Views\TeacherGiveNote\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

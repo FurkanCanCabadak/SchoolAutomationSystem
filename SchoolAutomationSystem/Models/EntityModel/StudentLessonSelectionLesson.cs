@@ -8,6 +8,7 @@ namespace SchoolAutomationSystem.Models.EntityModel
     public class StudentLessonSelectionLesson
     {
         public Student SingleStudent { get; set; }
+        public List<Student> StudentList { get; set; }
         public Lesson SingleLesson { get; set; }
         public List<Lesson> LessonList { get; set; }
         public SelectionLesson SingleSelectionLesson { get; set; }

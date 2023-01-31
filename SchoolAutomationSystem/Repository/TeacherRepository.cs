@@ -61,7 +61,12 @@ namespace SchoolAutomationSystem.Repository
 
             return teacher;
         }
+        public Teacher DetailwithName(string name)
+        {
+            var teacher = db.Teacher.FirstOrDefault(x=>x.UserName==name);
 
+            return teacher;
+        }
         public bool Edit(Teacher entity)
         {
             bool result = false;
